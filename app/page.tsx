@@ -22,7 +22,7 @@ export default function App() {
   const [winnerIndex, setWinnerIndex] = useState(0);
 
   const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; 
-  const AFFILIATE_LINK = 'https://ваша-партнерская-ссылка.com';
+  const AFFILIATE_LINK = 'https://ptgateway.com/v1/process/376?landing=/signup';
 
   useEffect(() => {
     const script = document.createElement('script');
