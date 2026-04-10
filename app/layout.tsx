@@ -1,4 +1,4 @@
-import "../app/globals.css";
+import "./globals.css?any=parameter"; 
 export const metadata = {
   title: 'TOWER RUSH',
 };
