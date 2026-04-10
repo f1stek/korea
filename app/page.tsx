@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { Flame, Clock, ShieldCheck, Coins, ArrowRight, BellRing, Trophy } from 'lucide-react';
-
+import { supabase } from './supabase';
 declare global {
   interface Window {
     dataLayer: any[];
@@ -61,7 +61,18 @@ export default function App() {
   const handleCtaClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsClicking(true);
+
     try {
+      // --- НОВЫЙ БЛОК ДЛЯ SUPABASE ---
+      await supabase.from('clicks').insert([
+        { 
+          geo: 'KR', 
+          status: 'conversion',
+          device: window.innerWidth < 768 ? 'Mobile' : 'Desktop'
+        }
+      ]);
+      // -------------------------------
+
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
           send_to: GA_MEASUREMENT_ID,
