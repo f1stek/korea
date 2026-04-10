@@ -13,24 +13,21 @@ const VALID_USERS = [
 
 // === МОКОВЫЕ ДАННЫЕ ===
 const MOCK_STATS = {
-  totalClicks: 12458,
-  liveUsers: 342,
-  conversionRate: '8.4%',
-  deposits: '₩ 45,200,000'
+  totalClicks: 0,
+  liveUsers: 0,
+  conversionRate: '0',
+  deposits: '₩ 0'
 };
 
-const MOCK_RECENT_CLICKS = [
-  { id: 'clk_001', time: 'Только что', ip: '121.1**.***.***', geo: 'KR', device: 'Mobile', browser: 'Safari', status: 'Converted' },
-  { id: 'clk_002', time: '2 мин назад', ip: '14.3**.***.***', geo: 'KR', device: 'Desktop', browser: 'Chrome', status: 'Clicked' },
-  { id: 'clk_003', time: '5 мин назад', ip: '211.2**.***.***', geo: 'KR', device: 'Mobile', browser: 'Samsung Net', status: 'Clicked' },
-  { id: 'clk_004', time: '12 мин назад', ip: '118.4**.***.***', geo: 'KR', device: 'Mobile', browser: 'Chrome', status: 'Converted' },
-  { id: 'clk_005', time: '15 мин назад', ip: '175.2**.***.***', geo: 'KR', device: 'Tablet', browser: 'Safari', status: 'Clicked' },
-];
+const MOCK_RECENT_CLICKS = [];
+
+
 
 const MOCK_CHART_DATA = [
-  { day: 'Пн', clicks: 1200 }, { day: 'Вт', clicks: 1900 }, { day: 'Ср', clicks: 1500 },
-  { day: 'Чт', clicks: 2200 }, { day: 'Пт', clicks: 2800 }, { day: 'Сб', clicks: 3500 }, { day: 'Вс', clicks: 3100 },
+  { day: 'Пн', clicks: 0 }, { day: 'Вт', clicks: 0 }, { day: 'Ср', clicks: 0 },
+  { day: 'Чт', clicks: 0 }, { day: 'Пт', clicks: 0 }, { day: 'Сб', clicks: 0 }, { day: 'Вс', clicks: 0 },
 ];
+
 
 export default function AdminDashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
