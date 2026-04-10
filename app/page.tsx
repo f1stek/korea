@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { Flame, Clock, ShieldCheck, Coins, ArrowRight, BellRing, Trophy } from 'lucide-react';
 import { supabase } from './supabase';
-import { supabase } from './supabase';
 declare global {
   interface Window {
     dataLayer: any[];
