@@ -1,9 +1,6 @@
-import "./globals.css";
-import React from "react";
-
+import "../app/globals.css";
 export const metadata = {
-  title: "TOWER RUSH & MINESLOT",
-  description: "Play and Win",
+  title: 'TOWER RUSH',
 };
 
 export default function RootLayout({
@@ -13,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
