@@ -21,7 +21,7 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState(900);
   const [winnerIndex, setWinnerIndex] = useState(0);
 
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; 
+  const GA_MEASUREMENT_ID = 'G-74J0QQRZRV'; 
   const AFFILIATE_LINK = 'https://ptgateway.com/v1/process/376?landing=/signup';
 
   useEffect(() => {
