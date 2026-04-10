@@ -19,7 +19,7 @@ const MOCK_STATS = {
   deposits: '₩ 0'
 };
 
-const MOCK_RECENT_CLICKS = [];
+const MOCK_RECENT_CLICKS: any[] = [];
 
 
 
