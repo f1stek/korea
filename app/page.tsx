@@ -11,69 +11,70 @@ export default function TowerRushPage() {
 
   return (
     <div style={{
-      // ГЛУБОКИЙ ГРАДИЕНТНЫЙ ФОН (Корейский стиль: темный + неоновые акценты)
-      background: "radial-gradient(circle at 50% 50%, #1a1a2e 0%, #16213e 40%, #0f172a 100%)",
+      // Темный фиолетово-синий фон
+      background: "linear-gradient(135deg, #090912 0%, #1a0b2e 50%, #0c1b33 100%)",
       color: "#ffffff",
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif",
+      fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif",
       textAlign: "center",
       margin: 0,
       padding: "20px",
       position: "relative",
       overflow: "hidden"
     }}>
-      {/* ЭФФЕКТЫ СВЕЧЕНИЯ НА ФОНЕ */}
+      {/* Неоновые свечения на фоне (Фиолетовое и Синее) */}
       <div style={{
         position: "absolute",
-        width: "600px", height: "600px",
-        background: "radial-gradient(circle, rgba(110, 231, 183, 0.1) 0%, rgba(0,0,0,0) 70%)",
-        top: "-150px", left: "-150px", borderRadius: "50%", pointerEvents: "none"
+        width: "60vw", height: "60vw", minWidth: "400px", minHeight: "400px",
+        background: "radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0,0,0,0) 70%)",
+        top: "-10%", left: "-10%", borderRadius: "50%", pointerEvents: "none"
       }} />
       <div style={{
         position: "absolute",
-        width: "500px", height: "500px",
-        background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(0,0,0,0) 70%)",
-        bottom: "-100px", right: "-100px", borderRadius: "50%", pointerEvents: "none"
+        width: "60vw", height: "60vw", minWidth: "400px", minHeight: "400px",
+        background: "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%)",
+        bottom: "-10%", right: "-10%", borderRadius: "50%", pointerEvents: "none"
       }} />
 
-      {/* ЛОГОТИП / НАЗВАНИЕ */}
+      {/* Заголовок с неоновым градиентом */}
       <h1 style={{ 
-        fontSize: "clamp(3.5rem, 12vw, 6rem)", 
+        fontSize: "clamp(3rem, 12vw, 6rem)", 
         fontWeight: "900",
         marginBottom: "15px", 
-        color: "#ffffff",
-        textTransform: "uppercase",
-        letterSpacing: "2px",
-        background: "linear-gradient(180deg, #ffffff 30%, #a5b4fc 100%)",
+        background: "linear-gradient(to right, #c084fc, #60a5fa)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
-        filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.3))"
+        filter: "drop-shadow(0 0 20px rgba(168, 85, 247, 0.4))",
+        textTransform: "uppercase",
+        letterSpacing: "2px",
+        zIndex: 1
       }}>
         TOWER RUSH
       </h1>
       
-      {/* КОРЕЙСКИЙ ПОДЗАГОЛОВОК */}
+      {/* Корейский текст */}
       <p style={{ 
         fontSize: "clamp(1.1rem, 4vw, 1.4rem)", 
         marginBottom: "50px", 
-        color: "#a5b4fc",
+        color: "#e2e8f0",
         opacity: 0.9,
         fontWeight: "500",
-        letterSpacing: "0.5px"
+        letterSpacing: "0.5px",
+        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+        zIndex: 1
       }}>
         타워 러시 - 지금 플레이하고 전설적인 승리를 쟁취하세요!
       </p>
 
-      {/* КНОПКА (Яркий, притягивающий акцент) */}
+      {/* Неоновая кнопка */}
       <button
         onClick={handleAction}
         style={{
-          // Яркий неоновый градиент для кнопки
-          background: "linear-gradient(90deg, #10b981 0%, #3b82f6 100%)",
+          background: "linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%)",
           color: "#ffffff",
           border: "none",
           padding: "20px 70px",
@@ -81,32 +82,34 @@ export default function TowerRushPage() {
           fontWeight: "800",
           borderRadius: "100px",
           cursor: "pointer",
-          boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)",
-          transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+          boxShadow: "0 0 30px rgba(139, 92, 246, 0.5), inset 0 0 10px rgba(255,255,255,0.2)",
+          transition: "all 0.3s ease",
           textTransform: "uppercase",
-          letterSpacing: "1px"
+          letterSpacing: "1px",
+          zIndex: 1
         }}
         onMouseOver={(e) => {
-          e.currentTarget.style.transform = "scale(1.08) translateY(-3px)";
-          e.currentTarget.style.boxShadow = "0 10px 40px rgba(59, 130, 246, 0.8)";
+          e.currentTarget.style.transform = "scale(1.05) translateY(-3px)";
+          e.currentTarget.style.boxShadow = "0 10px 40px rgba(139, 92, 246, 0.8), inset 0 0 15px rgba(255,255,255,0.4)";
         }}
         onMouseOut={(e) => {
           e.currentTarget.style.transform = "scale(1) translateY(0)";
-          e.currentTarget.style.boxShadow = "0 0 30px rgba(59, 130, 246, 0.6)";
+          e.currentTarget.style.boxShadow = "0 0 30px rgba(139, 92, 246, 0.5), inset 0 0 10px rgba(255,255,255,0.2)";
         }}
       >
         게임 시작하기
       </button>
 
-      {/* ФУТЕР */}
+      {/* Футер */}
       <div style={{ 
         position: "absolute", 
         bottom: "30px", 
         fontSize: "0.85rem", 
-        color: "#64748b",
-        opacity: 0.8 
+        color: "#94a3b8",
+        opacity: 0.6,
+        zIndex: 1
       }}>
-        © 2026 TOWER RUSH KOREA. Официальный партнер.
+        © 2026 TOWER RUSH KOREA. Official Partner.
       </div>
     </div>
   );
