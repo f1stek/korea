@@ -1,28 +1,13 @@
 "use client";
 
 import React from "react";
-import { createClient } from "@/supabase/client"; // Убедись, что путь к supabase верный
 
 export default function TowerRushPage() {
-  const handleAction = async () => {
-    // 1. Пытаемся записать клик в Supabase для статистики
-    try {
-      const supabase = createClient();
-      await supabase.from("clicks").insert([
-        { 
-          button_name: "TOWER_RUSH_START", 
-          platform: "TOPX",
-          created_at: new Date().toISOString() 
-        }
-      ]);
-    } catch (error) {
-      console.error("Supabase error:", error);
-    }
-
-    // 2. Твоя новая партнерская ссылка
+  const handleAction = () => {
+    // Твоя партнерская ссылка
     const partnerLink = "https://ptgateway.com/v1/process/376?landing=/signup&token1=youtube";
     
-    // Перенаправляем пользователя
+    // Перенаправляем пользователя напрямую
     window.location.href = partnerLink;
   };
 
@@ -39,7 +24,6 @@ export default function TowerRushPage() {
       textAlign: "center",
       padding: "20px"
     }}>
-      {/* Заголовок */}
       <h1 style={{ fontSize: "3rem", marginBottom: "10px", color: "#ffcc00" }}>
         TOWER RUSH
       </h1>
@@ -48,7 +32,6 @@ export default function TowerRushPage() {
         타워 러시 - 지금 플레이하고 승리하세요!
       </p>
 
-      {/* Главная кнопка */}
       <button
         onClick={handleAction}
         style={{
