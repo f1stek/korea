@@ -1,6 +1,7 @@
-import "./globals.css?any=parameter"; 
+import "./globals.css";
+
 export const metadata = {
-  title: 'TOWER RUSH',
+  title: "TOWER RUSH & MINESLOT",
 };
 
 export default function RootLayout({
@@ -10,7 +11,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body style={{ margin: 0, backgroundColor: "#050505" }}>
+        {children}
+      </body>
     </html>
   );
 }
