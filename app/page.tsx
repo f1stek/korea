@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 export default function TowerRushPage() {
   const [copied, setCopied] = useState("");
+  // Твоя основная реферальная ссылка
   const partnerLink = "https://ptgateway.com/v1/process/376?landing=/signup&token1=youtube";
 
   const copyToClipboard = (text: string, id: string) => {
@@ -35,10 +36,11 @@ export default function TowerRushPage() {
         zIndex: 0
       }}></div>
 
-      {/* Неоновые свечения */}
+      {/* Неоновые свечения на фоне */}
       <div style={{ position: "absolute", top: "10%", left: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
       <div style={{ position: "absolute", bottom: "10%", right: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
 
+      {/* ШАПКА САЙТА (Измененный текст) */}
       <header style={{ textAlign: "center", marginBottom: "40px", zIndex: 1 }}>
         <h1 style={{ 
           fontSize: "clamp(2.5rem, 8vw, 5rem)", 
@@ -48,8 +50,8 @@ export default function TowerRushPage() {
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           marginBottom: "10px"
-        }}>KOREA-2CAA.COM</h1>
-        <p style={{ color: "#9ca3af" }}>지금 플레이하고 전설적인 승리를 쟁취하세요!</p>
+        }}>SECRET BONUS ZONE</h1>
+        <p style={{ color: "#9ca3af", fontSize: "1.1rem" }}>가입 즉시 쏟아지는 특별한 혜택을 놓치지 마세요!</p>
       </header>
 
       <main style={{ 
@@ -61,7 +63,7 @@ export default function TowerRushPage() {
         zIndex: 1 
       }}>
         
-        {/* Card 1: TOWER RUSH */}
+        {/* ================= КАРТОЧКА 1: TOWER RUSH ================= */}
         <div className="game-card" style={cardStyle}>
           <div style={glowGold}></div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
@@ -85,14 +87,14 @@ export default function TowerRushPage() {
           </div>
         </div>
 
-        {/* Card 2: JUMPER */}
+        {/* ================= КАРТОЧКА 2: JUMPER ================= */}
         <div className="game-card" style={cardStyle}>
           <div style={glowBlue}></div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#c084fc", boxShadow: "0 0 8px #c084fc" }}></div>
             <span style={{ fontSize: "12px", color: "#9ca3af" }}>최고의 아케이드 액션</span>
           </div>
-          <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>점пер <span style={{ fontSize: "16px", color: "#9ca3af", fontWeight: "normal" }}>JUMPER</span></h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>점퍼 <span style={{ fontSize: "16px", color: "#9ca3af", fontWeight: "normal" }}>JUMPER</span></h2>
           <h3 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px" }}>하늘을 향해 뛰어오르세요</h3>
           <p style={{ fontSize: "14px", color: "#d1d5db", marginBottom: "25px" }}>최고 기록에 도전하세요 👇<br />보너스 받고 시작하기.</p>
           
@@ -111,6 +113,7 @@ export default function TowerRushPage() {
 
       </main>
 
+      {/* ПОДВАЛ (Footer) */}
       <footer style={{ marginTop: "60px", color: "#4b5563", fontSize: "12px", zIndex: 1 }}>
         © 2026 korea-2caa.com Official Partner.
       </footer>
@@ -118,7 +121,7 @@ export default function TowerRushPage() {
   );
 }
 
-// Стили компонентов
+// === СТИЛИ КОМПОНЕНТОВ ===
 const cardStyle: React.CSSProperties = {
   background: "rgba(22, 24, 35, 0.8)",
   backdropFilter: "blur(10px)",
@@ -139,14 +142,17 @@ const btnStyle: React.CSSProperties = {
   fontWeight: "bold",
   textAlign: "center",
   textDecoration: "none",
-  marginBottom: "20px"
+  marginBottom: "20px",
+  boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+  transition: "all 0.2s ease"
 };
 
 const promoBoxStyle: React.CSSProperties = {
   background: "rgba(30, 32, 44, 0.8)",
   padding: "15px",
   borderRadius: "12px",
-  marginTop: "auto"
+  marginTop: "auto",
+  border: "1px solid rgba(255, 255, 255, 0.05)"
 };
 
 const codeRowStyle: React.CSSProperties = {
@@ -163,11 +169,19 @@ const copyBtnStyle: React.CSSProperties = {
   background: "#3b82f6",
   color: "white",
   border: "none",
-  padding: "5px 12px",
+  padding: "6px 14px",
   borderRadius: "6px",
   fontSize: "12px",
-  cursor: "pointer"
+  fontWeight: "bold",
+  cursor: "pointer",
+  transition: "background 0.2s"
 };
 
-const glowGold: React.CSSProperties = { position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", background: "radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%)" };
-const glowBlue: React.CSSProperties = { position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", background: "radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%)" };
+const glowGold: React.CSSProperties = { 
+  position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", 
+  background: "radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" 
+};
+const glowBlue: React.CSSProperties = { 
+  position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", 
+  background: "radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" 
+};
