@@ -1,116 +1,173 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function TowerRushPage() {
-  const handleAction = () => {
-    // Твоя партнерская ссылка
-    const partnerLink = "https://ptgateway.com/v1/process/376?landing=/signup&token1=youtube";
-    window.location.href = partnerLink;
+  const [copied, setCopied] = useState("");
+  const partnerLink = "https://ptgateway.com/v1/process/376?landing=/signup&token1=youtube";
+
+  const copyToClipboard = (text: string, id: string) => {
+    navigator.clipboard.writeText(text);
+    setCopied(id);
+    setTimeout(() => setCopied(""), 2000);
   };
 
   return (
     <div style={{
-      // Темный фиолетово-синий фон
-      background: "linear-gradient(135deg, #090912 0%, #1a0b2e 50%, #0c1b33 100%)",
-      color: "#ffffff",
+      backgroundColor: "#0b0d17",
+      color: "white",
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif",
-      textAlign: "center",
-      margin: 0,
-      padding: "20px",
+      fontFamily: "'Noto Sans KR', sans-serif",
       position: "relative",
-      overflow: "hidden"
+      overflowX: "hidden",
+      padding: "40px 20px"
     }}>
-      {/* Неоновые свечения на фоне (Фиолетовое и Синее) */}
+      {/* Сетка на фоне */}
       <div style={{
         position: "absolute",
-        width: "60vw", height: "60vw", minWidth: "400px", minHeight: "400px",
-        background: "radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0,0,0,0) 70%)",
-        top: "-10%", left: "-10%", borderRadius: "50%", pointerEvents: "none"
-      }} />
-      <div style={{
-        position: "absolute",
-        width: "60vw", height: "60vw", minWidth: "400px", minHeight: "400px",
-        background: "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%)",
-        bottom: "-10%", right: "-10%", borderRadius: "50%", pointerEvents: "none"
-      }} />
+        inset: 0,
+        backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+        zIndex: 0
+      }}></div>
 
-      {/* Заголовок с неоновым градиентом */}
-      <h1 style={{ 
-        fontSize: "clamp(3rem, 12vw, 6rem)", 
-        fontWeight: "900",
-        marginBottom: "15px", 
-        background: "linear-gradient(to right, #c084fc, #60a5fa)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        filter: "drop-shadow(0 0 20px rgba(168, 85, 247, 0.4))",
-        textTransform: "uppercase",
-        letterSpacing: "2px",
-        zIndex: 1
-      }}>
-        TOWER RUSH
-      </h1>
-      
-      {/* Корейский текст */}
-      <p style={{ 
-        fontSize: "clamp(1.1rem, 4vw, 1.4rem)", 
-        marginBottom: "50px", 
-        color: "#e2e8f0",
-        opacity: 0.9,
-        fontWeight: "500",
-        letterSpacing: "0.5px",
-        textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-        zIndex: 1
-      }}>
-        타워 러시 - 지금 플레이하고 전설적인 승리를 쟁취하세요!
-      </p>
+      {/* Неоновые свечения */}
+      <div style={{ position: "absolute", top: "10%", left: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
+      <div style={{ position: "absolute", bottom: "10%", right: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
 
-      {/* Неоновая кнопка */}
-      <button
-        onClick={handleAction}
-        style={{
-          background: "linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%)",
-          color: "#ffffff",
-          border: "none",
-          padding: "20px 70px",
-          fontSize: "1.6rem",
-          fontWeight: "800",
-          borderRadius: "100px",
-          cursor: "pointer",
-          boxShadow: "0 0 30px rgba(139, 92, 246, 0.5), inset 0 0 10px rgba(255,255,255,0.2)",
-          transition: "all 0.3s ease",
-          textTransform: "uppercase",
-          letterSpacing: "1px",
-          zIndex: 1
-        }}
-        onMouseOver={(e) => {
-          e.currentTarget.style.transform = "scale(1.05) translateY(-3px)";
-          e.currentTarget.style.boxShadow = "0 10px 40px rgba(139, 92, 246, 0.8), inset 0 0 15px rgba(255,255,255,0.4)";
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.transform = "scale(1) translateY(0)";
-          e.currentTarget.style.boxShadow = "0 0 30px rgba(139, 92, 246, 0.5), inset 0 0 10px rgba(255,255,255,0.2)";
-        }}
-      >
-        게임 시작하기
-      </button>
+      <header style={{ textAlign: "center", marginBottom: "40px", zIndex: 1 }}>
+        <h1 style={{ 
+          fontSize: "clamp(2.5rem, 8vw, 5rem)", 
+          fontWeight: "900", 
+          letterSpacing: "0.1em",
+          background: "linear-gradient(to right, #b388ff, #8c9eff)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          marginBottom: "10px"
+        }}>KOREA-2CAA.COM</h1>
+        <p style={{ color: "#9ca3af" }}>지금 플레이하고 전설적인 승리를 쟁취하세요!</p>
+      </header>
 
-      {/* Футер */}
-      <div style={{ 
-        position: "absolute", 
-        bottom: "30px", 
-        fontSize: "0.85rem", 
-        color: "#94a3b8",
-        opacity: 0.6,
-        zIndex: 1
+      <main style={{ 
+        display: "grid", 
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", 
+        gap: "30px", 
+        width: "100%", 
+        maxWidth: "1000px", 
+        zIndex: 1 
       }}>
-        © 2026 TOWER RUSH KOREA. Official Partner.
-      </div>
+        
+        {/* Card 1: TOWER RUSH */}
+        <div className="game-card" style={cardStyle}>
+          <div style={glowGold}></div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#60a5fa", boxShadow: "0 0 8px #60a5fa" }}></div>
+            <span style={{ fontSize: "12px", color: "#9ca3af" }}>요즘 많이 하는 그 게임</span>
+          </div>
+          <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>타워 러쉬 <span style={{ fontSize: "16px", color: "#9ca3af", fontWeight: "normal" }}>TOWER RUSH</span></h2>
+          <h3 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px" }}>여기서 바로 시작</h3>
+          <p style={{ fontSize: "14px", color: "#d1d5db", marginBottom: "25px" }}>그냥 바로 하면 됨 👇<br />코드만 넣으면 끝.</p>
+          
+          <a href={partnerLink} target="_blank" rel="noopener noreferrer" style={btnStyle}>지금 바로 하기</a>
+          
+          <div style={promoBoxStyle}>
+            <p style={{ fontSize: "14px", fontWeight: "bold", marginBottom: "10px" }}>혜택 받으려면 코드만 입력</p>
+            <div style={codeRowStyle}>
+              <span style={{ color: "#eab308", fontWeight: "bold" }}>CODE: TOWERS</span>
+              <button onClick={() => copyToClipboard("TOWERS", "towers")} style={copyBtnStyle}>
+                {copied === "towers" ? "복사 완료!" : "코드 복사"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 2: JUMPER */}
+        <div className="game-card" style={cardStyle}>
+          <div style={glowBlue}></div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#c084fc", boxShadow: "0 0 8px #c084fc" }}></div>
+            <span style={{ fontSize: "12px", color: "#9ca3af" }}>최고의 아케이드 액션</span>
+          </div>
+          <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>점пер <span style={{ fontSize: "16px", color: "#9ca3af", fontWeight: "normal" }}>JUMPER</span></h2>
+          <h3 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px" }}>하늘을 향해 뛰어오르세요</h3>
+          <p style={{ fontSize: "14px", color: "#d1d5db", marginBottom: "25px" }}>최고 기록에 도전하세요 👇<br />보너스 받고 시작하기.</p>
+          
+          <a href={partnerLink} target="_blank" rel="noopener noreferrer" style={btnStyle}>지금 바로 하기</a>
+          
+          <div style={promoBoxStyle}>
+            <p style={{ fontSize: "14px", fontWeight: "bold", marginBottom: "10px" }}>보너스 아이템 코드</p>
+            <div style={codeRowStyle}>
+              <span style={{ color: "#c084fc", fontWeight: "bold" }}>CODE: JUMP24</span>
+              <button onClick={() => copyToClipboard("JUMP24", "jump")} style={copyBtnStyle}>
+                {copied === "jump" ? "복사 완료!" : "코드 복사"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer style={{ marginTop: "60px", color: "#4b5563", fontSize: "12px", zIndex: 1 }}>
+        © 2026 korea-2caa.com Official Partner.
+      </footer>
     </div>
   );
 }
+
+// Стили компонентов
+const cardStyle: React.CSSProperties = {
+  background: "rgba(22, 24, 35, 0.8)",
+  backdropFilter: "blur(10px)",
+  borderRadius: "20px",
+  padding: "30px",
+  border: "1px solid rgba(255,255,255,0.1)",
+  position: "relative",
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column"
+};
+
+const btnStyle: React.CSSProperties = {
+  background: "linear-gradient(90deg, #FACC15 0%, #38BDF8 100%)",
+  padding: "15px",
+  borderRadius: "12px",
+  color: "black",
+  fontWeight: "bold",
+  textAlign: "center",
+  textDecoration: "none",
+  marginBottom: "20px"
+};
+
+const promoBoxStyle: React.CSSProperties = {
+  background: "rgba(30, 32, 44, 0.8)",
+  padding: "15px",
+  borderRadius: "12px",
+  marginTop: "auto"
+};
+
+const codeRowStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  background: "rgba(0,0,0,0.3)",
+  padding: "8px 12px",
+  borderRadius: "8px",
+  border: "1px solid rgba(255,255,255,0.05)"
+};
+
+const copyBtnStyle: React.CSSProperties = {
+  background: "#3b82f6",
+  color: "white",
+  border: "none",
+  padding: "5px 12px",
+  borderRadius: "6px",
+  fontSize: "12px",
+  cursor: "pointer"
+};
+
+const glowGold: React.CSSProperties = { position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", background: "radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%)" };
+const glowBlue: React.CSSProperties = { position: "absolute", top: "-10%", right: "-10%", width: "120px", height: "120px", background: "radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%)" };
