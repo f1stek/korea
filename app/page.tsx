@@ -40,17 +40,17 @@ export default function TowerRushPage() {
       <div style={{ position: "absolute", top: "10%", left: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
       <div style={{ position: "absolute", bottom: "10%", right: "10%", width: "40vw", height: "40vw", background: "radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%)", zIndex: 0 }}></div>
 
-      {/* ШАПКА САЙТА (Измененный текст) */}
+      {/* ШАПКА САЙТА (Обновленный текст с огнями) */}
       <header style={{ textAlign: "center", marginBottom: "40px", zIndex: 1 }}>
         <h1 style={{ 
-          fontSize: "clamp(2.5rem, 8vw, 5rem)", 
+          fontSize: "clamp(2rem, 6vw, 4.5rem)", 
           fontWeight: "900", 
-          letterSpacing: "0.1em",
+          letterSpacing: "0.05em",
           background: "linear-gradient(to right, #b388ff, #8c9eff)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           marginBottom: "10px"
-        }}>SECRET BONUS ZONE</h1>
+        }}>🔥 SECRET BONUS ZONE 🔥</h1>
         <p style={{ color: "#9ca3af", fontSize: "1.1rem" }}>가입 즉시 쏟아지는 특별한 혜택을 놓치지 마세요!</p>
       </header>
 
@@ -64,7 +64,7 @@ export default function TowerRushPage() {
       }}>
         
         {/* ================= КАРТОЧКА 1: TOWER RUSH ================= */}
-        <div className="game-card" style={cardStyle}>
+        <div style={cardStyle}>
           <div style={glowGold}></div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#60a5fa", boxShadow: "0 0 8px #60a5fa" }}></div>
@@ -88,12 +88,13 @@ export default function TowerRushPage() {
         </div>
 
         {/* ================= КАРТОЧКА 2: JUMPER ================= */}
-        <div className="game-card" style={cardStyle}>
+        <div style={cardStyle}>
           <div style={glowBlue}></div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "15px" }}>
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#c084fc", boxShadow: "0 0 8px #c084fc" }}></div>
             <span style={{ fontSize: "12px", color: "#9ca3af" }}>최고의 아케이드 액션</span>
           </div>
+          {/* ИСПРАВЛЕННОЕ СЛОВО 점퍼 */}
           <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>점퍼 <span style={{ fontSize: "16px", color: "#9ca3af", fontWeight: "normal" }}>JUMPER</span></h2>
           <h3 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "15px" }}>하늘을 향해 뛰어오르세요</h3>
           <p style={{ fontSize: "14px", color: "#d1d5db", marginBottom: "25px" }}>최고 기록에 도전하세요 👇<br />보너스 받고 시작하기.</p>
@@ -113,9 +114,9 @@ export default function TowerRushPage() {
 
       </main>
 
-      {/* ПОДВАЛ (Footer) */}
+      {/* ПОДВАЛ (Footer) с версией для проверки обновления */}
       <footer style={{ marginTop: "60px", color: "#4b5563", fontSize: "12px", zIndex: 1 }}>
-        © 2026 korea-2caa.com Official Partner.
+        © 2026 korea-2caa.com Official Partner. (v2)
       </footer>
     </div>
   );
