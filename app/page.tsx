@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function TowerRushPage() {
   const [copied, setCopied] = useState("");
   // Твоя основная реферальная ссылка
   const partnerLink = "https://ptgateway.com/v1/process/376?landing=/signup&token1=youtube";
+
+  // === АВТОМАТИЧЕСКАЯ СМЕНА НАЗВАНИЯ В БРАУЗЕРЕ ===
+  useEffect(() => {
+    document.title = "🔥 Tower Rush & Jumper"; // <-- МЕНЯЙ НАЗВАНИЕ ВКЛАДКИ ЗДЕСЬ
+  }, []);
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
